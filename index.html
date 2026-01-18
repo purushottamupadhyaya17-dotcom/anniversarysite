@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Pratiksha</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <button class="music-btn" onclick="toggleMusic()">♫</button>
+    <audio id="bg-music" loop>
+        <source src="bgmusic.mpeg" type="audio/mpeg">
+    </audio>
+
+    <header>
+        <div class="header-content">
+            <h1 class="main-title">Happy Anniversary</h1>
+            <div class="names">Purushottam <span class="heart-beat">❤️</span> Pratiksha</div>
+            <p class="subtitle">Celebrating one year of "Us"</p>
+
+            <div class="timer-wrapper">
+                <div class="time-box">
+                    <span id="days">00</span>
+                    <small>Days</small>
+                </div>
+                <div class="time-box">
+                    <span id="hours">00</span>
+                    <small>Hours</small>
+                </div>
+                <div class="time-box">
+                    <span id="minutes">00</span>
+                    <small>Mins</small>
+                </div>
+                <div class="time-box">
+                    <span id="seconds">00</span>
+                    <small>Secs</small>
+                </div>
+            </div>
+        
+        </div>
+    </header>
+
+    <section>
+        <h2 class="section-title">My Promise to You</h2>
+        <div class="love-note-container">
+            <p>My Dearest <span class="highlight">Pratiksha</span>,</p>
+            <p>This past year hasn't just been about dates or fun times; it has been about finding my home in a person. 
+               I want you to know that you are not just my girlfriend—you are my peace, my safe place, and my greatest happiness.</p>
+            <p>I promise to always be the hand you can hold when you are scared, the shoulder you can cry on when the world feels heavy, 
+               and the person who celebrates your smallest wins like they are huge victories.</p>
+            <p class="signature">- Always yours, Fucche</p>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Our Memories</h2>
+        
+        <div class="scroll-container" id="autoScrollGallery">
+            
+            <img src="1.jpeg" class="gallery-img">
+            <img src="2.jpeg" class="gallery-img">
+            <img src="3.jpeg" class="gallery-img">
+            <img src="4.jpeg" class="gallery-img">
+            <img src="5.jpeg" class="gallery-img">
+            <img src="6.jpeg" class="gallery-img">
+            <img src="7.jpeg" class="gallery-img">
+            <img src="8.jpeg" class="gallery-img">
+            <img src="9.jpeg" class="gallery-img">
+            <img src="10.jpeg" class="gallery-img">
+            <img src="11.jpeg" class="gallery-img">
+            <img src="12.jpeg" class="gallery-img">
+            <img src="13.jpeg" class="gallery-img">
+
+            <img src="1.jpeg" class="gallery-img">
+            <img src="2.jpeg" class="gallery-img">
+            <img src="3.jpeg" class="gallery-img">
+            <img src="4.jpeg" class="gallery-img">
+            <img src="5.jpeg" class="gallery-img">
+            <img src="6.jpeg" class="gallery-img">
+            <img src="7.jpeg" class="gallery-img">
+            <img src="8.jpeg" class="gallery-img">
+            <img src="9.jpeg" class="gallery-img">
+            <img src="10.jpeg" class="gallery-img">
+            <img src="11.jpeg" class="gallery-img">
+            <img src="12.jpeg" class="gallery-img">
+            <img src="13.jpeg" class="gallery-img">
+            
+        </div>
+        <p style="text-align: center; color: #777; font-size: 0.9rem; margin-top: 10px;">(Swipe to see more)</p>
+    </section>
+
+    <section>
+        <h2 class="section-title">Virtual Care Package 🎁</h2>
+        <p style="text-align: center; margin-bottom: 20px;">My babygirll, whenever you need me, click one of these buttons.</p>
+        <div class="care-grid">
+            <button class="care-btn" onclick="showCare('hug')">🤗 I Need a Hug</button>
+            <button class="care-btn" onclick="showCare('tired')">😫 I'm Tired</button>
+            <button class="care-btn" onclick="showCare('sad')">😢 I'm Sad</button>
+            <button class="care-btn" onclick="showCare('love')">❤️ Do You Love Me?</button>
+        </div>
+        <div id="care-display" class="care-message"></div>
+    </section>
+
+        <div class="love-calc-box" style="background: #ffe6ea; min-height: 300px; padding: 20px;">
+            
+            <h3 style="color: #d63384; font-family: 'Poppins', sans-serif;">Do you love your Fucche?</h3>
+            
+            <div class="prank-container">
+                <button class="btn-yes" onclick="showLovePopup()">YES, Obviously!</button>
+                <button class="btn-no" id="no-btn" onmouseover="moveButton()" onclick="moveButton()" ontouchstart="moveButton()">NO</button>
+            </div>
+        </div>
+
+        <div class="love-calc-box love-ui">
+            <h3>❤️ Love Calculator</h3>
+            <div style="margin: 20px 0; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                <input type="text" id="name1" class="calc-input" placeholder="Your Name">
+                <span style="font-size: 2rem; color: #ff3366;">+</span>
+            <input type="text" id="name2" class="calc-input" placeholder="Partner's Name">
+            </div>
+            <button class="action-btn" onclick="calculateLove()">Calculate Match</button>
+            <p id="love-result" class="gold-text" style="font-size: 1.5rem; margin-top: 15px;"></p>
+        </div>
+
+        <div class="cookie-section" style="text-align: center; margin: 30px 0; padding: 20px; background: rgba(255, 255, 255, 0.1); border-radius: 20px;">
+          <div id="cookie-container" onclick="crackCookie()" style="cursor: pointer; transition: transform 0.2s;">
+             <div id="cookie-icon" style="font-size: 5rem; margin-bottom: 10px;">🥠</div>
+               <p id="fortune-msg" style="font-family: 'Poppins', sans-serif; color: #d63384; min-height: 50px; padding: 0 10px;">
+                     Tap the cookie to reveal your fortune...
+                </p>
+            </div>
+            <button class="action-btn" onclick="resetCookie()" style="display: none; margin-top: 10px;" id="reset-cookie-btn">
+              Get New Fortune
+               </button>
+         </div>
+    
+            <div class="love-calc-box" style="background: white; padding: 30px; border-radius: 20px; border: 2px dashed #ff3366; margin-top: 20px; text-align: center;">
+    <h3 style="color: #ff3366; margin-bottom: 15px;">🏦 Purushottam's Love Bank</h3>
+    
+    <div class="coupon-ticket" onclick="redeemCoupon()" style="cursor: pointer; background: #fff0f3; padding: 25px; border-radius: 15px; border: 1px solid #ffccd5; margin: 0 auto; max-width: 300px; transition: transform 0.2s;">
+        <h2 id="coupon-text" style="margin: 0; font-family: 'Dancing Script', cursive; color: #d63384; font-size: 1.4rem;">
+            Tap to Withdraw a Coupon 🎫
+        </h2>
+    </div>
+    
+    <p style="font-size: 0.85rem; color: #666; margin-top: 15px;">
+        (Limit: 1 coupon per day... just kidding, take them all! 😉)
+    </p>
+</div>
+    </section>
+<div style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-top: 20px; text-align: center;">
+    <h3>Match the Hearts ❤️</h3>
+    <div id="memory-game" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; max-width: 320px; margin: 20px auto;"></div>
+    <p id="win-msg" style="color: #ff3366; font-weight: bold; margin-top: 10px;"></p>
+    <button class="action-btn" onclick="initGame()" style="background: #ff3366; color: white; border: none; padding: 10px 20px; border-radius: 10px; cursor: pointer;">Restart Game</button>
+</div>
+    <div class="love-calc-box" style="background: #2c3e50; color: white; padding: 30px; border-radius: 20px; margin-top: 20px; text-align: center;">
+    
+    <div id="vault-section" style="background: #d32828; color: white; padding: 40px 20px; border-radius: 25px; margin: 30px auto; max-width: 350px; text-align: center; border: 2px solid #ff3366;">
+    
+    <div id="vault-ui">
+        <h3 style="color: white; margin-bottom: 10px;">🔒 Secret Vault</h3>
+        <p style="color: #bdc3c7; font-size: 0.9rem; margin-bottom: 20px;">Enter the 4-digit code to unlock</p>
+        
+        <input type="password" id="passcode" maxlength="4" placeholder="****" 
+               style="width: 140px; padding: 15px; border-radius: 12px; border: none; text-align: center; font-size: 1.8rem; background: white; color: #2c3e50; margin-bottom: 20px;">
+        
+        <button class="action-btn" onclick="checkVault()" 
+                style="background: #ff3366; color: white; border: none; padding: 12px 30px; border-radius: 25px; cursor: pointer; font-weight: bold; width: 100%;">
+            UNLOCK
+        </button>
+    </div>
+
+    <div id="vault-content" style="display: none; margin-top: 20px;"></div>
+</div>
+
+    <footer style="background: #a53b3b; padding: 60px 20px; text-align: center; border-top: 4px solid #ff3366; margin-top: 40px; color: white;">
+    
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 5px;">
+        
+        <h2 style="font-family: 'Dancing Script', cursive; font-size: 2.8rem; margin: 0; color: #ff85a1; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">
+            Happy Anniversary Love
+        </h2>
+
+        <div class="heart-pulse" style="font-size: 3.5rem; margin: 10px 0;">
+            ❤️
+        </div>
+
+        <h2 style="font-family: 'Dancing Script', cursive; font-size: 2.8rem; margin: 0; color: #ff85a1; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">
+            Forever & Always
+        </h2>
+
+        <p style="font-family: 'Poppins', sans-serif; letter-spacing: 3px; margin-top: 25px; font-weight: 600; font-size: 0.9rem; opacity: 0.9; text-transform: uppercase;">
+            Purushottam & Pratiksha
+        </p>
+    </div>
+
+</footer>
+
+    <div class="popup-overlay" id="overlay" onclick="closePopup()"></div>
+    <div id="love-popup">
+        <h2>I Knew It! ❤️</h2>
+        <p>I love you too, my Babygirll!</p>
+    </div>
+
+    <script>
+        // TIMER: 23/01/2025 at 02:11
+        const startDate = new Date("2025-01-23T02:11:00").getTime();
+
+        function updateTimer() {
+            const now = new Date().getTime();
+            const distance = now - startDate;
+
+            if (distance < 0) { document.getElementById("timer").innerHTML = "Starting soon..."; return; }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days;
+            document.getElementById("hours").innerText = hours;
+            document.getElementById("minutes").innerText = minutes;
+            document.getElementById("seconds").innerText = seconds;
+        }
+        setInterval(updateTimer, 1000);
+        updateTimer();
+
+        function toggleMusic() {
+    const music = document.getElementById('bg-music');
+    const btn = document.querySelector('.music-btn');
+
+    if (music.paused) {
+        // We use .play() which returns a 'promise' to ensure it starts correctly
+        music.play().then(() => {
+            btn.innerHTML = "🎵";
+            console.log("Music started playing.");
+        }).catch(error => {
+            console.log("Playback failed:", error);
+        });
+    } else {
+        music.pause();
+        btn.innerHTML = "🔇";
+        console.log("Music paused.");
+    }
+}
+
+// Fixed Auto-unlock: Only triggers on the very first interaction
+document.addEventListener('click', function() {
+    const music = document.getElementById('bg-music');
+    if (music.paused) {
+        music.play().catch(() => {
+            // Silently fail if browser still blocks it
+            console.log("Waiting for manual play click.");
+        });
+    }
+}, { once: true });
+
+        function showCare(mood) {
+            const display = document.getElementById('care-display');
+            display.style.display = 'block';
+            let msg = "";
+            if(mood === 'hug') msg = "Sending you a massive virtual bear hug! 🐻🤗";
+            if(mood === 'tired') msg = "Rest your head, my love. You've done enough today. I'm proud of you. 😴";
+            if(mood === 'sad') msg = "I'm holding your hand. This feeling will pass. I love you so much. ❤️";
+            if(mood === 'love') msg = "I love you more than pizza, football, and coding combined! 🍕⚽💻";
+            display.innerText = msg;
+            confetti();
+        }
+
+
+        function showLovePopup() {
+            document.getElementById('love-popup').classList.add('show');
+            document.getElementById('overlay').style.display = 'block';
+            confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
+        }
+        function closePopup() {
+            document.getElementById('love-popup').classList.remove('show');
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        // --- LOVE CALCULATOR (Strict Mode) ---
+    function calculateLove() {
+        // 1. Get the names and convert to lowercase (so caps don't matter)
+        const name1 = document.getElementById('name1').value.trim().toLowerCase();
+        const name2 = document.getElementById('name2').value.trim().toLowerCase();
+        const resultText = document.getElementById('love-result');
+
+        // 2. Define the correct names
+        const herName = "pratiksha";
+        // List valid spellings for your name
+        const myNames = ["purushottam", "purushattam"]; 
+
+        // 3. Check for the Match
+        // Logic: (Name1 is Her AND Name2 is You) OR (Name1 is You AND Name2 is Her)
+        const isMatch = 
+            (name1 === herName && myNames.includes(name2)) || 
+            (name2 === herName && myNames.includes(name1));
+
+        // 4. Show Result
+        if (isMatch) {
+            resultText.innerHTML = "Infinity% ❤️<br><span style='font-size: 1rem'>Made for each other!</span>";
+            resultText.style.color = "#d63384"; // Pink
+            
+            // Optional: Trigger confetti if you have the function
+            if (typeof confetti === 'function') confetti(); 
+        } else {
+            resultText.innerHTML = "0% 💔<br><span style='font-size: 1rem'>Not a match.</span>";
+            resultText.style.color = "#dc3545"; // Red
+        }
+    }
+
+        const videoElement = document.getElementById('our-video');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) videoElement.play();
+                else videoElement.pause();
+            });
+        }, { threshold: 0.5 });
+        observer.observe(videoElement);
+
+       // --- NEW CONSOLIDATED FORTUNE COOKIE LOGIC ---
+function crackCookie() {
+    const cookieIcon = document.getElementById('cookie-icon');
+    const msgDisplay = document.getElementById('fortune-msg');
+    const resetBtn = document.getElementById('reset-cookie-btn');
+
+    // 1. Safety check and prevent clicking multiple times while open
+    if (!cookieIcon || cookieIcon.innerHTML === "🥠✨" || cookieIcon.innerHTML === "❤️") return;
+
+    // 2. Start the shake animation
+    cookieIcon.classList.add('shake-animation'); 
+    
+    // 3. Wait 500ms for the shake to finish, then reveal the message
+    setTimeout(() => {
+        const fortunes = [
+            "Your smile is the only sunrise I need. ☀️",
+            "Every day with you is a new adventure. 🌍",
+            "My favorite place is inside your hug. 🤗",
+            "You are my greatest blessing. ✨",
+            "I love you more than words can say. 💖",
+            "Our love story is my favorite. 📖",
+            "You make my heart smile. 😊",
+            "You are the peanut butter to my jelly. 🥜",
+            "Forever looks beautiful with you. 💍",
+            "Warning: You are loved more than you know! ❤️"
+        ];
+
+        // Pick a random fortune
+        const randomIndex = Math.floor(Math.random() * fortunes.length);
+        const randomMessage = fortunes[randomIndex];
+
+        // Update UI with Backticks (`) for proper text rendering
+        msgDisplay.innerHTML = `"${randomMessage}"`; 
+        msgDisplay.style.fontWeight = "bold";
+        msgDisplay.style.fontSize = "1.2rem";
+
+        // Change icon, stop shaking, and show reset button
+        cookieIcon.classList.remove('shake-animation');
+        cookieIcon.innerHTML = "🥠✨"; 
+        resetBtn.style.display = "inline-block";
+        
+        // Celebration
+        if (typeof confetti === 'function') confetti();
+        
+    }, 500); // 500 milliseconds = 0.5 seconds
+}
+
+function resetCookie() {
+    document.getElementById('fortune-msg').innerHTML = "Tap the cookie to reveal your fortune...";
+    document.getElementById('cookie-icon').innerHTML = "🥠";
+    document.getElementById('reset-cookie-btn').style.display = "none";
+}
+
+
+    // --- THE VAULT BRAIN ---
+function checkVault() {
+    const pinInput = document.getElementById('passcode').value; 
+    const vaultContent = document.getElementById('vault-content');
+    const correctPin = "2301"; // Your secret code
+
+    if (pinInput === correctPin) {
+        // 1. Hide the lock UI
+        document.getElementById('vault-ui').style.display = 'none'; 
+        vaultContent.style.display = 'block'; 
+        
+        // 2. Insert the Scratch Card HTML
+        vaultContent.innerHTML = `
+            <div style="text-align: center;">
+                <p style="color: #2ecc71; font-weight: bold;">🔓 ACCESS GRANTED!</p>
+                <p style="font-size: 0.8rem; color: #bdc3c7; margin-bottom: 10px;">Scratch to reveal... 👇</p>
+                <div id="scratch-container" style="position: relative; width: 250px; height: 250px; margin: 0 auto 15px;">
+                    <img src="s1.jpeg" style="width: 250px; height: 250px; border-radius: 10px; object-fit: cover;">
+                    <canvas id="scratch-canvas" width="250" height="250" style="position: absolute; top: 0; left: 0; border-radius: 10px; cursor: crosshair; touch-action: none;"></canvas>
+                </div>
+                <span style="font-family: 'Dancing Script', cursive; font-size: 1.2rem; color: white;">
+                    "Every moment with you is a treasure. I love you my babyy!❤️" 
+                </span>
+            </div>`;
+        
+        // 3. Start the scratch-off logic
+        initScratchCard();
+        if (typeof confetti === 'function') confetti();
+    } else {
+        alert("❌ Wrong code! Try again.");
+    }
+}
+
+function initScratchCard() {
+    const canvas = document.getElementById('scratch-canvas');
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#888';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = '#fff';
+    ctx.font = 'bold 18px Arial';
+    ctx.textAlign = 'center';
+    ctx.fillText('SCRATCH HERE', 125, 135);
+
+    let isDrawing = false;
+    const scratch = (e) => {
+        if (!isDrawing) return;
+        const rect = canvas.getBoundingClientRect();
+        const x = (e.pageX || (e.touches ? e.touches[0].pageX : 0)) - rect.left - window.scrollX;
+        const y = (e.pageY || (e.touches ? e.touches[0].pageY : 0)) - rect.top - window.scrollY;
+        ctx.globalCompositeOperation = 'destination-out';
+        ctx.beginPath();
+        ctx.arc(x, y, 25, 0, Math.PI * 2); 
+        ctx.fill();
+    };
+
+    canvas.addEventListener('mousedown', () => isDrawing = true);
+    canvas.addEventListener('touchstart', () => isDrawing = true);
+    window.addEventListener('mouseup', () => isDrawing = false);
+    window.addEventListener('touchend', () => isDrawing = false);
+    canvas.addEventListener('mousemove', scratch);
+    canvas.addEventListener('touchmove', scratch);
+}
+    </script>
+
+    <script>
+    // --- 1. JUMP LOGIC (The Prank) ---
+    function moveButton() {
+        const btnNo = document.getElementById('no-btn');
+        
+        // Jailbreak: Force move to body so it can jump anywhere
+        if (btnNo.parentNode !== document.body) {
+            document.body.appendChild(btnNo);
+        }
+
+        // Calculate a random spot in your CURRENT VIEW
+        const visibleTop = window.scrollY; 
+        const visibleHeight = window.innerHeight; 
+        const screenW = window.innerWidth; 
+        
+        const newX = Math.random() * (screenW - 100);
+        const newY = visibleTop + (Math.random() * (visibleHeight - 100));
+
+        // Apply new position
+        btnNo.style.position = 'absolute'; 
+        btnNo.style.left = Math.max(10, newX) + 'px'; 
+        btnNo.style.top = Math.max(10, newY) + 'px';
+        btnNo.style.zIndex = "500"; 
+    }
+
+    // --- 2. RESET LOGIC (The Cleanup) ---
+    // Listen for ANY scroll. If you scroll, put the button back in the box.
+    window.addEventListener('scroll', function() {
+        const btnNo = document.getElementById('no-btn');
+        const container = document.querySelector('.prank-container');
+        
+        // If the button is currently "loose" on the body, put it back home
+        if (btnNo.parentNode === document.body) {
+            container.appendChild(btnNo); 
+            
+            // Clear the specific jump styles so it returns to normal
+            btnNo.style.position = ''; 
+            btnNo.style.left = '';
+            btnNo.style.top = '';
+            btnNo.style.zIndex = '';
+        }
+    });
+</script>
+
+<script>
+    // --- LOVE BANK LOGIC ---
+    const coupons = [
+        "Unlimited Freeuse 🌚",
+        "One Huge Hug 🤗",
+        "A Movie Night 🍿",
+        "Dinner Date of Your Choice 🍜",
+        "Unlimited K  isses for 10 Mins 💋",
+        "One Foot Massage 👣",
+        "Chocolate Party 🍫",
+        "A Long Walk Together 🚶‍♂️🚶‍♀️",
+        "One 'I am Right' Card (Use wisely!) 🃏",
+        
+    ];
+
+    function redeemCoupon() {
+        const couponDisplay = document.getElementById('coupon-text');
+        
+        // 1. Pick a random coupon
+        const randomIndex = Math.floor(Math.random() * coupons.length);
+        const selectedCoupon = coupons[randomIndex];
+
+        // 2. Show it in the bank
+        couponDisplay.innerHTML = `Congratulations! You Won:<br><strong>${selectedCoupon}</strong>`;
+        couponDisplay.style.color = "#28a745"; // Success Green
+        
+        // 3. Celebrate!
+        if (typeof confetti === 'function') confetti();
+    }
+
+    // 1. DEFINE VARIABLES FIRST (Top of Script)
+const symbols = [
+    '❤️', '💖', '💝', '💗', '🌹', '💍', '🧸', '✨',
+    '❤️', '💖', '💝', '💗', '🌹', '💍', '🧸', '✨'
+];
+let flippedCards = []; 
+let matchedCount = 0;
+
+// 2. THE FUNCTIONS
+function initGame() {
+    const gameBoard = document.getElementById('memory-game');
+    if (!gameBoard) return;
+    
+    gameBoard.innerHTML = '';
+    document.getElementById('win-msg').innerHTML = '';
+    flippedCards = [];
+    matchedCount = 0;
+
+    const shuffled = symbols.sort(() => Math.random() - 0.5);
+
+    shuffled.forEach((symbol) => {
+        const card = document.createElement('div');
+        card.style = "width: 70px; height: 70px; background: #ff3366; color: white; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; border-radius: 10px; cursor: pointer;";
+        card.innerHTML = '?'; 
+        card.onclick = () => {
+            if (flippedCards.length < 2 && !flippedCards.includes(card) && card.innerHTML === '?') {
+                card.innerHTML = symbol;
+                card.style.background = 'white';
+                card.style.color = '#ff3366';
+                flippedCards.push(card);
+                if (flippedCards.length === 2) setTimeout(checkMatch, 600);
+            }
+        };
+        gameBoard.appendChild(card);
+    });
+}
+
+function checkMatch() {
+    const [card1, card2] = flippedCards;
+    if (card1.innerHTML === card2.innerHTML) {
+        matchedCount += 2;
+        if (matchedCount === symbols.length) {
+            document.getElementById('win-msg').innerHTML = "Perfect Match! Just like us! ❤️";
+            if (typeof confetti === 'function') confetti();
+        }
+    } else {
+        [card1, card2].forEach(c => {
+            c.innerHTML = '?';
+            
+    const gallery = document.querySelector('.photo-gallery');
+let isUserInteracting = false;
+let autoScrollTimer;
+let resumeTimer;
+
+function startAutoScroll() {
+    // Clear any existing intervals
+    clearInterval(autoScrollTimer);
+    
+    autoScrollTimer = setInterval(() => {
+        // Only scroll if the user isn't touching the screen
+        if (!isUserInteracting && gallery) {
+            gallery.scrollLeft += 1; // Move by 1 pixel
+
+            // Infinite Loop logic: Reset to start when end is reached
+            if (gallery.scrollLeft >= gallery.scrollWidth - gallery.clientWidth) {
+                gallery.scrollLeft = 0;
+            }
+        }
+    }, 30); // 30ms provides a smooth walking-pace scroll
+}
+
+// Detection for Hybrid behavior
+const stopInteraction = () => {
+    isUserInteracting = true;
+    clearTimeout(resumeTimer);
+};
+
+const startInteraction = () => {
+    // Wait 3 seconds after she lets go before resuming auto-scroll
+    resumeTimer = setTimeout(() => {
+        isUserInteracting = false;
+    }, 3000);
+};
+
+// Event Listeners for Mobile and Desktop
+gallery.addEventListener('touchstart', stopInteraction);
+gallery.addEventListener('touchend', startInteraction);
+gallery.addEventListener('mousedown', stopInteraction);
+gallery.addEventListener('mouseup', startInteraction);
+
+// Start the gallery immediately
+startAutoScroll();
+
+
+</script>
+</body>
+</html>

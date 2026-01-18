@@ -1,0 +1,453 @@
+/* =========================================
+   STYLE.CSS - MOBILE OPTIMIZED
+   ========================================= */
+
+:root {
+    --primary: #ff3366;      
+    --secondary: #ff99cc;    
+    --accent: #ffcc00;       
+    --bg-color: #fff5f7;     
+    --text-main: #4a4a4a;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    /* BACKGROUND: Soft Pink */
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    text-align: center;
+    line-height: 1.6;
+    overflow-x: hidden; 
+}
+
+/* --- HEADER (DARK HERO BACKGROUND) --- */
+header {
+    min-height: 100vh;
+    /* DARK HERO IMAGE */
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?auto=format&fit=crop&w=1920');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.header-content {
+    width: 100%;
+    max-width: 600px;
+}
+
+/* --- TEXT STYLES (Fixed Sizes) --- */
+.main-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.5rem; /* Smaller default size */
+    margin: 0;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    line-height: 1.2;
+    color: #fff;
+}
+
+.names {
+    font-family: 'Cinzel', serif; /* Elegant & readable */
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    color: #eee;
+    letter-spacing: 1px;
+}
+
+/* --- TIMER STYLE (Responsive) --- */
+.timer-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Allows stacking on tiny screens */
+}
+
+.time-box {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 10px;
+    border-radius: 12px;
+    min-width: 70px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.time-box span {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.time-box small {
+    color: #ffcc00;
+    text-transform: uppercase;
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+
+/* --- MOBILE SPECIFIC RULES (The Fix) --- */
+@media only screen and (max-width: 600px) {
+    /* Shrink the big title */
+    .main-title {
+        font-size: 3rem; 
+    }
+    /* Shrink names */
+    .names {
+        font-size: 1.2rem;
+    }
+    /* Make timer boxes smaller to fit side-by-side */
+    .time-box {
+        min-width: 60px;
+        padding: 8px 5px;
+    }
+    .time-box span {
+        font-size: 1.2rem;
+    }
+    /* Adjust gaps */
+    .timer-wrapper {
+        gap: 8px;
+    }
+}
+
+/* --- SECTIONS --- */
+section { padding: 50px 20px; max-width: 900px; margin: 0 auto; }
+
+.section-title {
+    font-family: 'Cinzel', serif;
+    font-size: 2.2rem;
+    color: var(--primary);
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--secondary);
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+/* --- LOVE NOTE --- */
+.love-note-container {
+    background: white;
+    padding: 30px; /* Reduced padding for mobile */
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(255, 51, 102, 0.1);
+    text-align: left;
+    border-left: 5px solid var(--primary);
+    background-image: linear-gradient(#f0f0f0 0.1em, transparent 0.1em);
+    background-size: 100% 2em;
+}
+
+.love-note-container p {
+    line-height: 2em;
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.6rem;
+    color: #444;
+    margin-top: -5px;
+}
+
+.highlight { color: var(--primary); font-weight: bold; }
+.signature { text-align: right; margin-top: 15px; font-weight: bold; color: var(--primary); font-family: 'Cinzel', serif; font-size: 1.1rem; }
+
+
+/* --- INFINITY SCROLL MARQUEE --- */
+.marquee-container {
+    width: 100%;
+    overflow: hidden; /* Hides the scrollbar */
+    background: rgba(255, 255, 255, 0.4);
+    padding: 20px 0;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+/* --- INFINITE AUTO + MANUAL SCROLL --- */
+.scroll-container {
+    display: flex;
+    gap: 15px;
+    padding: 20px;
+    overflow-x: auto; /* Allows you to swipe manually */
+    white-space: nowrap;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    
+    /* Hide Scrollbars */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE */
+    cursor: grab;
+}
+
+.scroll-container::-webkit-scrollbar { 
+    display: none; /* Chrome/Safari */
+}
+
+/* --- CARE PACKAGE --- */
+.care-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Forces 2 columns on phone */
+    gap: 10px;
+    margin-top: 20px;
+}
+.care-btn {
+    background: white;
+    border: 2px solid var(--secondary);
+    border-radius: 15px;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: 0.3s;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+}
+.care-btn:hover { background: var(--secondary); color: white; transform: translateY(-3px); }
+.care-message { margin-top: 20px; padding: 15px; background: #fff0f5; border-radius: 10px; font-style: italic; display: none; border: 1px dashed var(--primary); }
+
+/* --- GAMES --- */
+.love-calc-box {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+/* --- ULTIMATE PRANK FIX --- */
+.prank-container {
+    position: relative;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Stacks buttons on mobile */
+    justify-content: center;
+    align-items: center;
+    gap: 30px; /* Space between buttons */
+    min-height: 150px;
+}
+
+.btn-yes { 
+    background: #28a745; 
+    color: white; 
+    border: none; 
+    padding: 15px 50px; 
+    border-radius: 50px; 
+    font-size: 1.5rem; 
+    font-weight: bold;
+    cursor: pointer; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    
+    /* LAYER FIX: Lower than Popup (1000), higher than No (5) */
+    position: relative;
+    z-index: 10; 
+}
+
+.btn-no { 
+    background: #dc3545; 
+    color: white; 
+    border: none; 
+    padding: 12px 35px; 
+    border-radius: 50px; 
+    font-size: 1.1rem; 
+    font-weight: bold;
+    cursor: pointer; 
+    
+    /* Starts normal, becomes absolute when it jumps */
+    position: static; 
+    z-index: 5; /* Lowest layer so it never blocks anything */
+    transition: left 0.2s, top 0.2s; /* Smooth jump */
+}
+
+/* Ensure Popup is ALWAYS on top */
+#love-popup {
+    z-index: 9999 !important; 
+}
+.calc-input { padding: 10px; border: 2px solid #ddd; border-radius: 10px; width: 40%; font-size: 1rem; text-align: center; }
+.action-btn { background: var(--primary); color: white; border: none; padding: 10px 25px; border-radius: 25px; cursor: pointer; font-size: 1rem; margin-top: 10px; }
+
+.cookie-box { background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); padding: 25px; border-radius: 20px; cursor: pointer; border: 2px solid var(--accent); margin-bottom: 30px; }
+
+.video-section { text-align: center; max-width: 800px; margin: 40px auto; }
+.video-wrapper { background: white; padding: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); border-radius: 15px; transform: rotate(-1deg); }
+video { width: 100%; border-radius: 10px; display: block; }
+
+.vault-box { background: #333; color: white; padding: 40px 20px; border-radius: 20px; margin-top: 40px; }
+.vault-input { padding: 10px; border-radius: 5px; border: none; text-align: center; font-size: 1rem; width: 80%; }
+
+footer { margin-top: 40px; padding: 40px 20px; background: #9b0404; color: white; }
+.footer-text { font-family: 'Great Vibes', cursive; font-size: 2.2rem; color: var(--primary); margin: 0; }
+
+#love-popup { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0); background: white; padding: 30px; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.3); text-align: center; z-index: 2001; transition: transform 0.4s; border: 4px solid var(--primary); width: 80%; max-width: 300px; }
+#love-popup.show { transform: translate(-50%, -50%) scale(1); }
+.popup-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 2000; display: none; }
+
+.music-btn { position: fixed; bottom: 20px; right: 20px; background: var(--primary); color: white; width: 45px; height: 45px; border-radius: 50%; border: none; cursor: pointer; font-size: 1.2rem; z-index: 1000; }
+
+/* --- MEMORY GAME (Big Version) --- */
+#memory-game {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 Columns */
+    gap: 8px;              /* Tighter gap for more cards */
+    max-width: 350px;
+    margin: 20px auto;
+}
+
+.memory-card {
+    background: #ffb3c1;   /* Pink Back */
+    aspect-ratio: 1;       /* Square shape */
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;     /* Icon size */
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.3s, background 0.3s;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+}
+
+/* Flipped State (Show the Heart) */
+.memory-card.flipped {
+    background: #fff;
+    transform: rotateY(180deg);
+}
+
+/* Matched State (Green) */
+.memory-card.matched {
+    background: #d4edda;
+    cursor: default;
+}
+
+/* --- PREMIUM VISUAL UPGRADES --- */
+
+/* Glassmorphism for all container boxes */
+.love-calc-box, .cookie-section, #memory-game-container {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 192, 203, 0.5) !important;
+    box-shadow: 0 10px 30px rgba(214, 51, 132, 0.15) !important;
+    border-radius: 25px !important;
+    padding: 30px !important;
+    margin-bottom: 25px !important;
+}
+
+/* Upgrade the Memory Cards */
+.memory-card {
+    background: linear-gradient(135deg, #ff85a1, #d63384) !important;
+    box-shadow: 0 4px 10px rgba(214, 51, 132, 0.3) !important;
+    border: none !important;
+}
+
+/* Shake Animation for the Cookie */
+@keyframes cookieShake {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(-5deg); }
+    75% { transform: rotate(5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.shake-animation {
+    animation: cookieShake 0.5s ease;
+}
+
+/* Glowing Pulse for the Secret Vault */
+#vault-ui {
+    border: 2px solid #ff3366 !important;
+    animation: vaultGlow 2s infinite alternate;
+}
+
+@keyframes vaultGlow {
+    from { box-shadow: 0 0 5px rgba(255, 51, 102, 0.5); }
+    to { box-shadow: 0 0 20px rgba(255, 51, 102, 0.8), 0 0 30px rgba(255, 133, 161, 0.4); }
+}
+
+/* Custom styling for the Vault container */
+#vault-ui-container {
+    background: rgba(44, 62, 80, 0.9) !important; /* Dark Glass effect */
+    backdrop-filter: blur(10px);
+    border: 2px solid #ff3366;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(255, 51, 102, 0.4);
+    transition: all 0.3s ease;
+}
+
+/* Fix the text colors for the dark background */
+#vault-ui h3 {
+    color: #ffffff !important;
+    text-shadow: 0 0 10px rgba(255, 51, 102, 0.8);
+}
+
+#vault-ui p {
+    color: #ecf0f1 !important;
+    opacity: 0.9;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.heart-pulse {
+    animation: pulse 1.5s infinite ease-in-out;
+    display: inline-block;
+}
+
+.photo-gallery {
+    display: flex;
+    overflow-x: auto; /* Allows manual swipe */
+    overflow-y: hidden;
+    white-space: nowrap;
+    scroll-behavior: auto; /* Required for pixel-perfect JS scrolling */
+    -webkit-overflow-scrolling: touch; 
+    padding: 20px 0;
+    gap: 15px;
+}
+
+/* Hide scrollbar for a cleaner look */
+.photo-gallery::-webkit-scrollbar {
+    display: none;
+}
+
+.gallery-img {
+    width: 250px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 15px;
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+@keyframes infiniteScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Moves exactly half-way */
+}
+
+.gallery-img {
+    width: 250px; /* Adjust size as needed */
+    height: 350px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin: 0 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
