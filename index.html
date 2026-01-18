@@ -573,7 +573,6 @@ function checkMatch() {
     flippedCards = [];
 }
 
-    // Use the ID from your HTML (Line 62 in your screenshot)
 const gallery = document.getElementById('autoScrollGallery'); 
 let isUserInteracting = false;
 let autoScrollTimer;
@@ -581,41 +580,39 @@ let resumeTimer;
 
 function startAutoScroll() {
     clearInterval(autoScrollTimer);
-    
-    autoScrollTimer = setInterval(() => {
-        // Only scroll if Pratiksha isn't touching the screen
-        if (!isUserInteracting && gallery) {
-            gallery.scrollLeft += 1; 
 
-            // Infinite Loop: Reset when first set ends (halfway point)
-            // Since you duplicated images s1-s13, scrollWidth/2 is the loop point
-            if (gallery.scrollLeft >= (gallery.scrollWidth / 2)) {
+    autoScrollTimer = setInterval(() => {
+        if (!isUserInteracting && gallery) {
+            gallery.scrollLeft += 1;
+
+            if (gallery.scrollLeft >= gallery.scrollWidth / 2) {
                 gallery.scrollLeft = 0;
             }
         }
-    }, 25); // Slightly faster speed for a smoother feel
+    }, 25);
 }
 
-const stopInteraction = () => {
+function stopInteraction() {
     isUserInteracting = true;
     clearTimeout(resumeTimer);
-};
+}
 
 const startInteraction = () => {
-    // Wait 3 seconds after she lets go before resuming
     resumeTimer = setTimeout(() => {
         isUserInteracting = false;
-    }, 3000);
+    }, 2500);
 };
 
-// Listeners using the corrected 'gallery' variable
 if (gallery) {
-    gallery.addEventListener('touchstart', stopInteraction, {passive: true});
+    // Mobile
+    gallery.addEventListener('touchstart', stopInteraction, { passive: true });
+    gallery.addEventListener('touchmove', stopInteraction, { passive: true });
     gallery.addEventListener('touchend', startInteraction);
+
+    // Desktop
     gallery.addEventListener('mousedown', stopInteraction);
     gallery.addEventListener('mouseup', startInteraction);
-    
-    // Start immediately
+
     startAutoScroll();
 }
 
@@ -623,3 +620,4 @@ document.addEventListener('DOMContentLoaded', initGame);
 </script>
 </body>
 </html>
+
