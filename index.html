@@ -554,8 +554,10 @@ function initGame() {
 
 function checkMatch() {
     const [card1, card2] = flippedCards;
+
     if (card1.innerHTML === card2.innerHTML) {
         matchedCount += 2;
+
         if (matchedCount === symbols.length) {
             document.getElementById('win-msg').innerHTML = "Perfect Match! Just like us! ❤️";
             if (typeof confetti === 'function') confetti();
@@ -563,52 +565,61 @@ function checkMatch() {
     } else {
         [card1, card2].forEach(c => {
             c.innerHTML = '?';
-            
-    const gallery = document.querySelector('.photo-gallery');
+            c.style.background = '#ff3366';
+            c.style.color = 'white';
+        });
+    }
+
+    flippedCards = [];
+}
+
+    // Use the ID from your HTML (Line 62 in your screenshot)
+const gallery = document.getElementById('autoScrollGallery'); 
 let isUserInteracting = false;
 let autoScrollTimer;
 let resumeTimer;
 
 function startAutoScroll() {
-    // Clear any existing intervals
     clearInterval(autoScrollTimer);
     
     autoScrollTimer = setInterval(() => {
-        // Only scroll if the user isn't touching the screen
+        // Only scroll if Pratiksha isn't touching the screen
         if (!isUserInteracting && gallery) {
-            gallery.scrollLeft += 1; // Move by 1 pixel
+            gallery.scrollLeft += 1; 
 
-            // Infinite Loop logic: Reset to start when end is reached
-            if (gallery.scrollLeft >= gallery.scrollWidth - gallery.clientWidth) {
+            // Infinite Loop: Reset when first set ends (halfway point)
+            // Since you duplicated images s1-s13, scrollWidth/2 is the loop point
+            if (gallery.scrollLeft >= (gallery.scrollWidth / 2)) {
                 gallery.scrollLeft = 0;
             }
         }
-    }, 30); // 30ms provides a smooth walking-pace scroll
+    }, 25); // Slightly faster speed for a smoother feel
 }
 
-// Detection for Hybrid behavior
 const stopInteraction = () => {
     isUserInteracting = true;
     clearTimeout(resumeTimer);
 };
 
 const startInteraction = () => {
-    // Wait 3 seconds after she lets go before resuming auto-scroll
+    // Wait 3 seconds after she lets go before resuming
     resumeTimer = setTimeout(() => {
         isUserInteracting = false;
     }, 3000);
 };
 
-// Event Listeners for Mobile and Desktop
-gallery.addEventListener('touchstart', stopInteraction);
-gallery.addEventListener('touchend', startInteraction);
-gallery.addEventListener('mousedown', stopInteraction);
-gallery.addEventListener('mouseup', startInteraction);
+// Listeners using the corrected 'gallery' variable
+if (gallery) {
+    gallery.addEventListener('touchstart', stopInteraction, {passive: true});
+    gallery.addEventListener('touchend', startInteraction);
+    gallery.addEventListener('mousedown', stopInteraction);
+    gallery.addEventListener('mouseup', startInteraction);
+    
+    // Start immediately
+    startAutoScroll();
+}
 
-// Start the gallery immediately
-startAutoScroll();
-
-
+document.addEventListener('DOMContentLoaded', initGame);
 </script>
 </body>
 </html>
