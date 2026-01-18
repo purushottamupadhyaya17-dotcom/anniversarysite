@@ -197,6 +197,11 @@ section { padding: 50px 20px; max-width: 900px; margin: 0 auto; }
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE */
     cursor: grab;
+   /* Mobile auto-scroll fix */
+touch-action: pan-y;
+-webkit-overflow-scrolling: auto;
+scroll-behavior: auto;
+overflow-y: hidden;
 }
 
 .scroll-container::-webkit-scrollbar { 
@@ -474,3 +479,4 @@ footer { margin-top: 40px; padding: 40px 20px; background: #9b0404; color: white
     display: block;
     transform: translate(-50%, -50%) scale(1);
 }
+
