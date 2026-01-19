@@ -490,5 +490,15 @@ footer { margin-top: 40px; padding: 40px 20px; background: #9b0404; color: white
        padding-right: 10px;
     }
  }
+#love-popup {
+   position: fixed !important;
+   inset: 0;
+   margin: auto;
+   width: fit-content;
+   height: fit-content;
+   max-width: 90vw;
+   max-height: 90vw;
+   z-index: 9999;
+}
 
 
