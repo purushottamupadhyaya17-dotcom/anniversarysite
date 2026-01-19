@@ -501,4 +501,29 @@ footer { margin-top: 40px; padding: 40px 20px; background: #9b0404; color: white
    z-index: 9999;
 }
 
+/* ===== FIX POPUP POSITIONING (FINAL OVERRIDE) ===== */
+
+#overlay {
+    position: fixed !important;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+    display: none;
+}
+
+#love-popup {
+    position: fixed !important;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    z-index: 9999;
+    max-width: 90vw;
+    box-sizing: border-box;
+}
+
+/* When popup is shown */
+#love-popup.show {
+    display: block;
+    transform: translate(-50%, -50%) scale(1);
+}
 
