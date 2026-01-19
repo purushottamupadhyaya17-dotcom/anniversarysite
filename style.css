@@ -541,3 +541,22 @@ footer { margin-top: 40px; padding: 40px 20px; background: #9b0404; color: white
     margin: 0 !important;
 }
 
+/* === FINAL POPUP OVERRIDE (BREAK OUT OF TRANSFORMS) === */
+body {
+    transform: none !important;
+}
+
+#love-popup {
+    position: fixed !important;
+    top: 50vh !important;
+    left: 50vw !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 99999 !important;
+}
+
+.popup-overlay {
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 99998 !important;
+}
+
