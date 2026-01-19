@@ -543,4 +543,27 @@ footer { margin-top: 40px; padding: 40px 20px; background: #9b0404; color: white
     z-index: 99998 !important;
 }
 
+/* === POPUP ABSOLUTE ESCAPE FIX === */
+#overlay,
+#love-popup {
+  position: fixed !important;
+  top: 50vh !important;
+  left: 50vw !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 99999 !important;
+}
+
+/* Prevent parent transforms from affecting popup */
+body > #overlay,
+body > #love-popup {
+  transform: translate(-50%, -50%) !important;
+}
+
+#love-popup h2,
+#love-popup p {
+  color: #333 !important;
+  font-size: 18px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
 
