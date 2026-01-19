@@ -527,30 +527,13 @@ footer { margin-top: 40px; padding: 40px 20px; background: #9b0404; color: white
     transform: translate(-50%, -50%) scale(1);
 }
 
-/* === POPUP FIX (FORCE TRUE FIXED POSITION) === */
-#love-popup,
-.popup-overlay {
-    position: fixed !important;
-    inset: 0;
-}
-
+/* === FINAL POPUP CENTER FIX === */
 #love-popup {
-    top: 50% !important;
+    position: fixed !important;
+    top: 45% !important;              /* 👈 intentional visual correction */
     left: 50% !important;
-    transform: translate(-50%, -50%) scale(1) !important;
-    margin: 0 !important;
-}
-
-/* === FINAL POPUP OVERRIDE (BREAK OUT OF TRANSFORMS) === */
-body {
-    transform: none !important;
-}
-
-#love-popup {
-    position: fixed !important;
-    top: 50vh !important;
-    left: 50vw !important;
     transform: translate(-50%, -50%) !important;
+    margin: 0 !important;
     z-index: 99999 !important;
 }
 
@@ -559,4 +542,5 @@ body {
     inset: 0 !important;
     z-index: 99998 !important;
 }
+
 
