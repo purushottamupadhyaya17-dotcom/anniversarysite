@@ -1,6 +1,7 @@
-/* =========================================
-   STYLE.CSS - MOBILE OPTIMIZED
-   ========================================= */
+html, body {
+   width: 100%;
+   overflow-x: hidden;
+}
 
 :root {
     --primary: #ff3366;      
@@ -189,6 +190,8 @@ section { padding: 50px 20px; max-width: 900px; margin: 0 auto; }
     padding: 20px;
     overflow-x: auto; /* Allows you to swipe manually */
     white-space: nowrap;
+    max-width: 100%;
+    box-sizing: borderbox;
     background: rgba(255, 255, 255, 0.4);
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -473,10 +476,18 @@ footer { margin-top: 40px; padding: 40px 20px; background: #9b0404; color: white
     z-index: 1000;
     display: none;
     transition: transform 0.3s ease;
+    max-width: 90vw;
+    box-sizing: border-box;
 }
 
 #love-popup.show {
     display: block;
     transform: translate(-50%, -50%) scale(1);
 }
+ @media (max-width: 786px) {
+    .scroll-container {
+       paddind-left: 10px;
+       padding-right: 10px;
+    }
+ }
 
